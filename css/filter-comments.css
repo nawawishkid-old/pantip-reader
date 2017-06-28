@@ -1,0 +1,36 @@
+.filterComments-wrapper {
+	display: none;
+	margin: 40px auto 20px;
+}
+.filterComments-wrapper._active {
+	display: block !important;
+}
+.filterComments-wrapper::before {
+  position: relative;
+  top: 12px;
+  z-index: 99;
+  padding: 5px 20px;
+  line-height: 2em;
+  color: white;
+  background: coral;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.filterTopVotedComments-wrapper::before {
+	content: 'โหวตทอง';
+}
+.filterAllVotedComments-wrapper::before {
+	content: 'โหวตทั้งหมด';
+}
+.filterVotedNotTopComments-wrapper::before {
+	content: 'โหวตเทา';
+}
+.filterEmoComments-wrapper::before {
+	content: 'มีอารมณ์';
+}
+.filterComments-wrapper .cloned-comment {
+	padding-top: 9px !important;
+}
+.filterComments-wrapper .cloned-comment .display-post-status-leftside {
+	border: 1.5px solid coral !important;
+}

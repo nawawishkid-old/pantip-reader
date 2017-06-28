@@ -1,0 +1,19 @@
+button.rakkid-textClearer {
+  display: inline-block !important;
+  position: relative;
+  z-index: 999;
+  margin: 10px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  box-shadow: 0 0 4px -1px rgba(0,0,0,.3);
+  background-color: white !important;
+}
+button.rakkid-textClearer:hover {
+  box-shadow: 0 0 4px 1px rgba(0,0,0,.3);
+}
+button.rakkid-textClearer:active {
+	top: 2px;
+}

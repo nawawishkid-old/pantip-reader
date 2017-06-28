@@ -1,0 +1,170 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Getting Started Extension's Popup</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      * {
+        color: gray;
+        transition: color .3s, box-shadow .3s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+      html, body {
+        min-width: 300px;
+        margin: 0;
+        box-sizing: border-box;
+        background-color: #ccc;
+      }
+      h1,h2,h3,h4,h5,h6,p {
+        margin: 0;
+      }
+      a:hover {
+        color: coral;
+      }
+      body > * {
+        padding: 10px;
+      }
+
+      /* ----- HEADER ----- */
+      header {
+        text-align: center;
+        text-transform: uppercase;
+        background-color: #fcfcfc;
+        border-bottom: 1.5px solid coral;
+      }
+      header h3 {
+        color: coral;
+      }
+
+      /* ----- CONTROL PANEL ----- */
+      button {
+        margin: 3px;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        font-size: 1em;
+        border-radius: 3px;
+        box-shadow: 0 0 4px -1px rgba(0,0,0,.3);
+        background-color: #fcfcfc;
+      }
+      button:hover {
+        color: coral;
+        box-shadow: 0 0 4px 1px rgba(0,0,0,.3);
+      }
+      button._active,
+      button._active:hover {
+        background-color: coral;
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 1px 5px 1px rgba(0,0,0,.2);
+      }
+
+      .filter-comment-menu {
+        display: flex;
+        padding: 0;
+        background-color: #fcfcfc;
+        font-weight: bold;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        cursor: pointer;
+      }
+      .filter-comment-menu > * {
+        padding: 10px;
+      }
+      .filter-comment-menu > div:first-child {
+        width: 90%;
+        color: coral;
+      }
+      .filter-comment-menu .sort-icon {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+      .filter-comment-menu .sort-icon i.fa {
+        color: coral;
+      }
+      .filter-comment-panel {
+        max-height: 0;
+        padding: 0;
+        overflow: hidden;
+        transition: max-height .4s, padding .4s;
+      }
+      .filter-comment-panel._active {
+        padding: 10px;
+      }
+
+      /* ----- FOOTER ----- */
+      footer {
+        background-color: #fcfcfc;
+      }
+      .credit {
+        font-size: .8em;
+        text-align: center;
+      }
+    </style>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h3>Pantip Reader</h3>
+    </header>
+    <div class="button-wrapper">
+      <button 
+        id="responsive" 
+        class="__general" 
+        data-feature="responsive" 
+        title="ปรับหน้าเว็บให้พอดีจอ">พอดีจอ</button>
+      <button 
+        id="textClearer" 
+        class="__general" 
+        data-feature="textClearer" 
+        title="มีติดกระทู้ไว้จะไม่ลายตา">ปุ่มกันตาลาย</button>
+    </div>
+    <!-- SORT COMMENT MENU -->
+    <div 
+      class="filter-comment-menu"
+      title="เรียงลำดับคอมเมนต์ตามต้องการ"
+    >
+      <div>เรียงลำดับคอมเมนต์</div>
+      <div class="sort-icon __sort" data-feature="sortComments" data-sorting="DESC">
+        <i class="fa fa-sort-amount-desc" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="filter-comment-panel">
+      <button 
+        id="filterAllVotedComments" 
+        class="__filter" 
+        data-feature="filterAllVotedComments"
+        data-sorting="DESC" 
+        title="เรียงทุกคอมเมนต์ที่ถูกโหวต">โหวตทั้งหมด</button>
+      <button 
+        id="filterTopVotedComments" 
+        class="__filter" 
+        data-feature="filterTopVotedComments" 
+        data-sorting="DESC"
+        title="เรียงเฉพาะโหวตสีทอง">โหวตทอง</button>
+      <button 
+        id="filterVotedNotTopComments" 
+        class="__filter" 
+        data-feature="filterVotedNotTopComments" 
+        data-sorting="DESC"
+        title="เรียงเฉพาะโหวตสีเทา">โหวตเทา</button>
+      <button 
+        id="filterEmoComments" 
+        class="__filter" 
+        data-feature="filterEmoComments" 
+        data-sorting="DESC"
+        title="เรียงเฉพาะคอมเมนต์ที่มีคนมาแสดงความรู้สึก">มีอารมณ์</button>
+    </div>
+    <footer>
+      <p class="credit">สร้างสรรค์โดย <a href="" target="_blank">Nawawish Samerpark</a></p>
+    </footer>
+  </body>
+</html>
+

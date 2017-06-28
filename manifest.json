@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+
+  "name": "Pantip reader",
+  "description": "Make Pantip.com more easy to read",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "media/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Pantip Reader"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://pantip.com/topic/*",
+        "https://m.pantip.com/topic/*"
+      ],
+      "js": ["js/pantip.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    "css/responsive.css",
+    "css/cleanly.css",
+    "css/filter-comments.css",
+    "css/text-clearer.css"
+  ],
+
+  "permissions": [
+    "storage",
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}

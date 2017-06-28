@@ -1,0 +1,5 @@
+/* HEADER */
+body > header,
+body > div.samgee.logo-banner.doodle-banner {
+	display: none !important;
+}
